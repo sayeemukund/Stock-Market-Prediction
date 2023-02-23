@@ -1,1 +1,1 @@
-# stock_demo_app_2
+# Demo of Stock Market Prediction
