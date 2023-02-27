@@ -2,7 +2,7 @@
 Config files for my GitHub profile.
 ## View this in action
 
-Using [streamlit](https://streamlit.io) to show the [Stock market prediction](https://c19sitdash.azurewebsites.net/) based on real time [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://sayeemukund-stock-demo-app-2-stock1-cz3pfc.streamlit.app/)
+Using [streamlit](https://streamlit.io) to show the [Stock market prediction](https://c19sitdash.azurewebsites.net/) based on real time [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://sayeemukund-stock-market-prediction-stacked-lstm-w75clc.streamlit.app/)
 
 ## Code execution
 
