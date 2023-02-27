@@ -65,7 +65,7 @@ if selected=='About':
         st.write('-    As the motive of the project is to predict close price for the next 30 days, the close price is split in to training and testing data.')
         st.write('-    The training and testing data is now used to for performing a STACKED LSTM with a timestep ==100.')
         st.write('-    A while loop is created for prediction of the stock price for the next 30 days.')
-        st.write('-    Graphs are drawn to compare the current close price data with acquired predictions.')
+        st.write('-    Prediction Process approximate time: 30 seconds.')
 
 
 
