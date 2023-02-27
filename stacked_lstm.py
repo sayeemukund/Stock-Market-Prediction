@@ -46,7 +46,7 @@ if selected=='About':
     taba, tabc = st.tabs(["Introduction","Procedure"])
     with taba:
         st.title('Stock Makert Prediction.')
-        st.header('Please Note: This app is created just for educational purpose.')
+        st.header('Please Note: The streamlit app is created just for educational purpose.')
         st.write('-    Stock market prediction using stacked LSTM is a popular application of deep learning in finance..Several LSTM layers make up a stacked LSTM model, a kind of recurrent neural network (RNN). A series of historical stock market data, including daily stock prices, trading volume serves as the input of the model.The output is a forecast of future stock price movement.')
         st.write('-    The stacked LSTM model employs a number of levels of LSTM cells, each layer made up of a number of LSTM units. The first layer of the model receives the input data, while the subsequent layers receive the output of the previous layer as input. When each layer can capture more abstract and high-level representations of the input, the model is able to learn increasingly complicated patterns in the input data.')
         st.write('-    Once trained, the model can be used to make predictions based on fresh, unused data. A series of historical data are used as the input, and its output is a forecast of how the stock price will move in the future. To assess the accuracy, the projected values and the actual values can be compared.')
