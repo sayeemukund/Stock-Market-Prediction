@@ -41,7 +41,6 @@ def load_data(ticker):
     data.reset_index(inplace=True)
     return data
 
-
 if selected=='About':
     taba, tabc = st.tabs(["Introduction","Procedure"])
     with taba:
@@ -66,12 +65,6 @@ if selected=='About':
         st.write('-    The training and testing data is now used to for performing a STACKED LSTM with a timestep ==100.')
         st.write('-    A while loop is created for prediction of the stock price for the next 30 days.')
         st.write('-    Prediction Process approximate time: 30 seconds.')
-
-
-
-
-
-
 try:
     if selected=='Application':
         data=pd.read_csv('stock.csv')
@@ -138,11 +131,10 @@ try:
         train_data,test_data=df1[0:training_size,:],df1[training_size:len(df1),:1]
 
         import numpy
-        # convert an array of values into a dataset matrix
         def create_dataset(dataset, time_step=1):
             dataX, dataY = [], []
             for i in range(len(dataset)-time_step-1):
-                a = dataset[i:(i+time_step), 0]   ###i=0, 0,1,2,3-----99   100 
+                a = dataset[i:(i+time_step), 0] 
                 dataX.append(a)
                 dataY.append(dataset[i + time_step, 0])
             return numpy.array(dataX), numpy.array(dataY)
@@ -181,25 +173,19 @@ try:
             i=0
             while(i<31):
                 if(len(temp_input)>100):
-                    #print(temp_input)
                     x_input=np.array(temp_input[1:])
-                    #print("{} day input {}".format(i,x_input))
                     x_input=x_input.reshape(1,-1)
                     x_input = x_input.reshape((1, n_steps, 1))
-                    #print(x_input)
                     yhat = model.predict(x_input, verbose=0)
                     st.write("For Day {}, the predicted output is {}".format(i,scaler.inverse_transform(yhat)))
                     temp_input.extend(yhat[0].tolist())
                     temp_input=temp_input[1:]
-                    #print(temp_input)
                     lst_output.extend(yhat.tolist())
                     i=i+1
                 else:
                     x_input = x_input.reshape((1, n_steps,1))
                     yhat = model.predict(x_input, verbose=0)
-                    # print(yhat[0])
                     temp_input.extend(yhat[0].tolist())
-                    #print(len(temp_input))
                     lst_output.extend(yhat.tolist())
                     i=i+1
 
