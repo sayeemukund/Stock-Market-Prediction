@@ -9,6 +9,7 @@ dash-table==5.0.0
 dask==2023.2.0
 gitdb==4.0.10
 GitPython==3.1.30
+streamlit-option-menu==0.3.2
 keras==2.11.0
 keras-on-lstm==0.8.0
 lightgbm==3.3.5
