@@ -1,7 +1,7 @@
 # Stock Market Prediction Streamlit app using Stacked LSTM
-Config files for my GitHub profile.
-## View this in action
 
+
+## View this in action
 Using [streamlit](https://streamlit.io) to show the [Stock market prediction](https://c19sitdash.azurewebsites.net/) based on real time [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://sayeemukund-stock-market-prediction-stacked-lstm-w75clc.streamlit.app/)
 
 ## App in a Glance
