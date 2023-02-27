@@ -26,7 +26,7 @@ selected=option_menu(
         styles={
         "container": {"padding": "0!important", "background-color": "#051A67"},
         "icon": {"color": "black", "font-size": "30px"}, 
-        "nav-link": {"font-size": "20px", "text-align": "left", "margin":"0px", "--hover-color": "black"},
+        "nav-link": {"font-size": "20px", "text-align": "left", "margin":"0px", "--hover-color": "white"},
         "nav-link-selected": {"background-color": "#13A88A"},
     }
     )
