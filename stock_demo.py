@@ -24,7 +24,7 @@ selected=option_menu(
         default_index=0,
         orientation='horizontal',
         styles={
-        "container": {"padding": "0!important", "background-color": "#051A67"},
+        "container": {"padding": "0!important", "background-color": "grey"},
         "icon": {"color": "black", "font-size": "30px"}, 
         "nav-link": {"font-size": "20px", "text-align": "left", "margin":"0px", "--hover-color": "white"},
         "nav-link-selected": {"background-color": "#13A88A"},
