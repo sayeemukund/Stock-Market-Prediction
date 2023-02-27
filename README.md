@@ -1,4 +1,4 @@
-# Demo of Stock Market Prediction
+# Stock Market Prediction Streamlit app using Stacked LSTM
 Config files for my GitHub profile.
 ## View this in action
 
