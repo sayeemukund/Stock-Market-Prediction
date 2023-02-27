@@ -20,7 +20,7 @@ import datetime as dt
 selected=option_menu(
         menu_title='Stock Market Prediction',
         options= ['About','Application'],
-        icons=['briefcase-fill','clipboard-data-fill'],
+        icons=['briefcase-fill','hourglass-split'],
         default_index=0,
         orientation='horizontal',
         styles={
