@@ -76,7 +76,7 @@ try:
     if selected=='Application':
         data=pd.read_csv('stock.csv')
         data.dropna(inplace=True)
-        selected_stock = st.text_input('Enter your stock')
+        selected_stock = st.text_input('Enter your stock, eg. AAPL')
         selected_stock1=selected_stock.upper()
         df = load_data(selected_stock1)
         stock_name = data.loc[data['Symbol'].str.upper() == selected_stock, 'Name'].values[0]
