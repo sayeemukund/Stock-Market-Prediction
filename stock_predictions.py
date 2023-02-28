@@ -188,10 +188,7 @@ try:
                     x_input=x_input.reshape(1,-1)
                     x_input = x_input.reshape((1, n_steps, 1))
                     yhat = model.predict(x_input, verbose=0)
-                    with st.spinner('Predicting'):
-                        time.sleep(1)
-                        st.success('Here we go!!')
-                        st.write("For Day {}, the predicted output is {}".format(i,scaler.inverse_transform(yhat)))
+                    st.write("For Day {}, the predicted output is {}".format(i,scaler.inverse_transform(yhat)))
                     temp_input.extend(yhat[0].tolist())
                     temp_input=temp_input[1:]
                     lst_output.extend(yhat.tolist())
