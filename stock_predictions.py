@@ -41,8 +41,10 @@ def load_data(ticker):
     data = yf.download(ticker, START, END)
     data.reset_index(inplace=True)
     return data
+
 my_bar=st.progress(0)
 def update_progress(progress):
+        my_bar.progress(progress)
 
 
 if selected=='About':
@@ -196,13 +198,18 @@ try:
                                 temp_input=temp_input[1:]
                                 lst_output.extend(yhat.tolist())
                                 i=i+1
+                                progress_text = "Prediction for day {} of 30".format(i)
+                                percent_complete = int((i / 30) * 100)
+                                update_progress(percent_complete)
                         else:
                                 x_input = x_input.reshape((1, n_steps,1))
                                 yhat = model.predict(x_input, verbose=0)
                                 temp_input.extend(yhat[0].tolist())
                                 lst_output.extend(yhat.tolist())
                                 i=i+1
-                my_bar.progress(percent_complete+1,text=progress_text)
+                                progress_text = "Prediction for day {} of 30".format(i)
+                                percent_complete = int((i / 30) * 100)
+                                update_progress(percent_complete)
 
 except:
     pass
