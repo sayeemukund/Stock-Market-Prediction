@@ -81,7 +81,7 @@ try:
     if selected=='Application':
         data=pd.read_csv('stock.csv')
         data.dropna(inplace=True)
-        selected_stock = st.text_input('Enter your stock, eg. AAPL')
+        selected_stock = st.text_input('Enter your stock symbol:')
         st.sidebar.title('Information:')
         st.sidebar.info('Input is case sensitive. Stock symbols must be in capital letters.', icon="ℹ️")
         st.sidebar.info('If you need predictions of an Indian stock, type your stock followed by ".NS". For eg, TCS.NS,ONGC.NS,RELIANCE.NS,IOC.NS,INFY.NS,etc.', icon="ℹ️")
