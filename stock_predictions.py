@@ -81,7 +81,7 @@ try:
     if selected=='Application':
         data=pd.read_csv('stock.csv')
         data.dropna(inplace=True)
-        selected_stock = st.text_input('Enter your stock symbol:::')
+        selected_stock = st.text_input('Enter your stock symbol:')
         st.sidebar.title('Information:')
         st.sidebar.info('Input is case sensitive. Stock symbols must be in capital letters.', icon="ℹ️")
         st.sidebar.info('If you need predictions of an Indian stock, type your stock followed by ".NS". For eg, TCS.NS,ONGC.NS,RELIANCE.NS,IOC.NS,INFY.NS,etc.', icon="ℹ️")
@@ -151,7 +151,7 @@ try:
         def create_dataset(dataset, time_step=1):
             dataX, dataY = [], []
             for i in range(len(dataset)-time_step-1):
-                a = dataset[i:(i+time_step), 0]   ###i=0, 0,1,2,3-----99   100 
+                a = dataset[i:(i+time_step), 0]
                 dataX.append(a)
                 dataY.append(dataset[i + time_step, 0])
             return numpy.array(dataX), numpy.array(dataY)
