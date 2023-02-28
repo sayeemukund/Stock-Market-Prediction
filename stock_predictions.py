@@ -79,18 +79,18 @@ try:
         data.dropna(inplace=True)
         selected_stock = st.text_input('Enter your stock, eg. AAPL')
         st.sidebar.title('Information:')
-        st.sidebar.info('If you know the name of the stock, you can directly type your stock symbol', icon="ℹ️")
-        st.sidebar.info('You can type the name of your desired comapny, the input will show multiple matches. You can use the respective stock symbol', icon="ℹ️")
-        st.sidebar.info('If you want to search for an Indian stock, type your stock followed by ".NS". For eg, TCS.NS,ONGC.NS,RELIANCE.NS,IOC.NS,INFY.NS,etc.', icon="ℹ️")
-        st.sidebar.info('If you want to search for a Foreign stock,  type your stock according to Yahoo Finance. For eg, AAPL,TSLA,AMZN,GOOGL,etc.',icon="ℹ️")
+        st.sidebar.info('If you need predictions of an Indian stock, type your stock followed by ".NS". For eg, TCS.NS,ONGC.NS,RELIANCE.NS,IOC.NS,INFY.NS,etc.', icon="ℹ️")
+        st.sidebar.info('If you need prredictions of a Foreign stock,  type your stock according to Yahoo Finance. For eg, AAPL,TSLA,AMZN,GOOGL,etc.',icon="ℹ️")
+        st.sidebar.info('Prediction runtime is approximately 30 seconds.',icon="ℹ️")
+        
         selected_stock1=selected_stock.upper()
         df = load_data(selected_stock1)
         stock_name = data.loc[data['Symbol'].str.upper() == selected_stock, 'Name'].values[0]
         if selected_stock1 in data['Symbol'].str.upper().values:
             stock_name = data.loc[data['Symbol'].str.upper() == selected_stock1, 'Name'].values[0]
-            st.header(f'The name of the stock with symbol {selected_stock1} is {stock_name}.')
+            st.success(f'The name of the stock with symbol {selected_stock1} is {stock_name}.')
         else:
-            st.write(f'Stock symbol {selected_stock} not found.')
+            st.warning(f'Stock symbol {selected_stock} not found.',icon='⚠️')
         tab2, tab3,tab4 = st.tabs(["Data-set", "Data Visualization", "Predictions"])
         with tab2:
                 data_load_state = st.text('Loading data...')
