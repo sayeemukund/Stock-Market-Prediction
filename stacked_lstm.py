@@ -68,17 +68,17 @@ if selected=='About':
 try:
         
         if selected=='Application':
-        data=pd.read_csv('stock.csv')
-        data.dropna(inplace=True)
-        selected_stock = st.text_input('Enter your stock')
-        selected_stock1=selected_stock.upper()
-        df = load_data(selected_stock1)
-        stock_name = data.loc[data['Symbol'].str.upper() == selected_stock, 'Name'].values[0]
-        if selected_stock1 in data['Symbol'].str.upper().values:
-            stock_name = data.loc[data['Symbol'].str.upper() == selected_stock1, 'Name'].values[0]
-            st.header(f'The name of the stock with symbol {selected_stock1} is {stock_name}.')
-        else:
-            st.write(f'Stock symbol {selected_stock} not found.')
+                data=pd.read_csv('stock.csv')
+                data.dropna(inplace=True)
+#                 selected_stock = st.text_input('Enter your stock')
+#                 selected_stock1=selected_stock.upper()
+#                 df = load_data(selected_stock1)
+#                 stock_name = data.loc[data['Symbol'].str.upper() == selected_stock, 'Name'].values[0]
+#         if selected_stock1 in data['Symbol'].str.upper().values:
+#                 stock_name = data.loc[data['Symbol'].str.upper() == selected_stock1, 'Name'].values[0]
+#                 st.header(f'The name of the stock with symbol {selected_stock1} is {stock_name}.')
+#         else:
+#                 st.write(f'Stock symbol {selected_stock} not found.')
         tab2, tab3,tab4 = st.tabs(["Data-set", "Data Visualization", "Predictions"])
         with tab2:
             selected_stock = st.text_input('Enter your stock')
