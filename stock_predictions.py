@@ -14,7 +14,7 @@ from tensorflow.keras.layers import Dense
 from tensorflow.keras.layers import LSTM
 from sklearn.preprocessing import MinMaxScaler
 from streamlit_option_menu import option_menu
-st.set_page_config(page_title="Stock Data", page_icon=":chart_with_upwards_trend:")
+st.set_page_config(page_title="Stock Prediction", page_icon=":chart_with_upwards_trend:")
 
 import datetime as dt
 selected=option_menu(
