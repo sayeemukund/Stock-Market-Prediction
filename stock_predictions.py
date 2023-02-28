@@ -166,44 +166,44 @@ try:
             for percent_complete in range(100):
                 time.sleep(0.1)
                 my_bar.progress(percent_complete+1,text=progress_text)
-            model=Sequential()
-            model.add(LSTM(50,return_sequences=True,input_shape=(100,1)))
-            model.add(LSTM(50,return_sequences=True))
-            model.add(LSTM(50))
-            model.add(Dense(1))
-            model.compile(loss='mean_squared_error',optimizer='adam')
+                model=Sequential()
+                model.add(LSTM(50,return_sequences=True,input_shape=(100,1)))
+                model.add(LSTM(50,return_sequences=True))
+                model.add(LSTM(50))
+                model.add(Dense(1))
+                model.compile(loss='mean_squared_error',optimizer='adam')
 
-            model.fit(X_train,y_train,validation_data=(X_test,ytest),epochs=20,batch_size=64,verbose=1)
-            train_predict=model.predict(X_train)
-            test_predict=model.predict(X_test)
+                model.fit(X_train,y_train,validation_data=(X_test,ytest),epochs=20,batch_size=64,verbose=1)
+                train_predict=model.predict(X_train)
+                test_predict=model.predict(X_test)
 
-            train_predict=scaler.inverse_transform(train_predict)
-            test_predict=scaler.inverse_transform(test_predict)
+                train_predict=scaler.inverse_transform(train_predict)
+                test_predict=scaler.inverse_transform(test_predict)
 
-            x_input=test_data[len(test_data)-100:].reshape(1,-1)
-            temp_input=list(x_input)
-            temp_input=temp_input[0].tolist()
+                x_input=test_data[len(test_data)-100:].reshape(1,-1)
+                temp_input=list(x_input)
+                temp_input=temp_input[0].tolist()
 
-            lst_output=[]
-            n_steps=100
-            i=0
-            while(i<31):
-                if(len(temp_input)>100):
-                    x_input=np.array(temp_input[1:])
-                    x_input=x_input.reshape(1,-1)
-                    x_input = x_input.reshape((1, n_steps, 1))
-                    yhat = model.predict(x_input, verbose=0)
-                    st.write("For Day {}, the predicted output is {}".format(i,scaler.inverse_transform(yhat)))
-                    temp_input.extend(yhat[0].tolist())
-                    temp_input=temp_input[1:]
-                    lst_output.extend(yhat.tolist())
-                    i=i+1
-                else:
-                    x_input = x_input.reshape((1, n_steps,1))
-                    yhat = model.predict(x_input, verbose=0)
-                    temp_input.extend(yhat[0].tolist())
-                    lst_output.extend(yhat.tolist())
-                    i=i+1
+                lst_output=[]
+                n_steps=100
+                i=0
+                while(i<31):
+                        if(len(temp_input)>100):
+                                x_input=np.array(temp_input[1:])
+                                x_input=x_input.reshape(1,-1)
+                                x_input = x_input.reshape((1, n_steps, 1))
+                                yhat = model.predict(x_input, verbose=0)
+                                st.write("For Day {}, the predicted output is {}".format(i,scaler.inverse_transform(yhat)))
+                                temp_input.extend(yhat[0].tolist())
+                                temp_input=temp_input[1:]
+                                lst_output.extend(yhat.tolist())
+                                i=i+1
+                        else:
+                                x_input = x_input.reshape((1, n_steps,1))
+                                yhat = model.predict(x_input, verbose=0)
+                                temp_input.extend(yhat[0].tolist())
+                                lst_output.extend(yhat.tolist())
+                                i=i+1
 
 except:
     pass
