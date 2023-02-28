@@ -92,8 +92,8 @@ try:
                                 st.write("You have entered", selected_stock)
                                 st.experimental_data_editor(df)  
                                 data_load_state.text('Loading data... done!')
-                        else:
-                                st.write(f'Stock symbol {selected_stock} not found.')
+                     else:
+                        st.write(f'Stock symbol {selected_stock} not found.')
             
 #             data_load_state = st.text('Loading data...')
 #             st.write("You have entered", selected_stock)
