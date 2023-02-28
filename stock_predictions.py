@@ -84,6 +84,7 @@ try:
         selected_stock = st.text_input('Enter your stock symbol:')
         st.sidebar.title('Information:')
         st.sidebar.info('Input is case sensitive. Stock symbols must be in capital letters.', icon="ℹ️")
+        st.sidebar.info('Data retrieved from Yahoo finance from 1st january 2021 till today.', icon="ℹ️")
         st.sidebar.info('If you need predictions of an Indian stock, type your stock followed by ".NS". For eg, TCS.NS,ONGC.NS,RELIANCE.NS,IOC.NS,INFY.NS,etc.', icon="ℹ️")
         st.sidebar.info('If you need prredictions of a Foreign stock,  type your stock according to Yahoo Finance. For eg, AAPL,TSLA,AMZN,GOOGL,etc.',icon="ℹ️")
         st.sidebar.info('Prediction runtime is approximately 30 seconds.',icon="ℹ️")
