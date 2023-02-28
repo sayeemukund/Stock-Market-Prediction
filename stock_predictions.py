@@ -161,10 +161,7 @@ try:
 
 
         with tab4:
-            progress_text='Operation in Progress.Please wait.'
-            my_bar=st.progress(0,text=progress_text)
-            for percent_complete in range(100):
-                time.sleep(10)
+                progress_text='Operation in Progress.Please wait.'
                 model=Sequential()
                 model.add(LSTM(50,return_sequences=True,input_shape=(100,1)))
                 model.add(LSTM(50,return_sequences=True))
