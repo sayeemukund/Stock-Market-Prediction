@@ -78,7 +78,7 @@ try:
         data=pd.read_csv('stock.csv')
         data.dropna(inplace=True)
         selected_stock = st.text_input('Enter your stock, eg. AAPL')
-        st.sidebar.title('Information')
+        st.sidebar.title('Information \n-----------',icon="ℹ️")
         st.sidebar.info('If you know the name of the stock, you can directly type your stock symbol', icon="ℹ️")
         st.sidebar.info('You can type the name of your desired comapny, the input will show multiple matches. You can use the respective stock symbol', icon="ℹ️")
         st.sidebar.info('If you want to search for an Indian stock, type ur stock followed by ".NS". For eg, TCS.NS,ONGC.NS,RELIANCE.NS,IOC.NS,INFY.NS,etc.', icon="ℹ️")
