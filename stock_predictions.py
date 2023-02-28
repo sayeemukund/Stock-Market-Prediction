@@ -41,6 +41,8 @@ def load_data(ticker):
     data = yf.download(ticker, START, END)
     data.reset_index(inplace=True)
     return data
+my_bar=st.progress(0)
+def update_progress(progress):
 
 
 if selected=='About':
