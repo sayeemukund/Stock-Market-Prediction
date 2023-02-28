@@ -79,6 +79,7 @@ try:
         data.dropna(inplace=True)
         selected_stock = st.text_input('Enter your stock, eg. AAPL')
         st.sidebar.title('Information:')
+        st.sidebar.info('Input is case sensitive. Stock symbols must be in capital letters.', icon="ℹ️")
         st.sidebar.info('If you need predictions of an Indian stock, type your stock followed by ".NS". For eg, TCS.NS,ONGC.NS,RELIANCE.NS,IOC.NS,INFY.NS,etc.', icon="ℹ️")
         st.sidebar.info('If you need prredictions of a Foreign stock,  type your stock according to Yahoo Finance. For eg, AAPL,TSLA,AMZN,GOOGL,etc.',icon="ℹ️")
         st.sidebar.info('Prediction runtime is approximately 30 seconds.',icon="ℹ️")
@@ -187,7 +188,10 @@ try:
                     x_input=x_input.reshape(1,-1)
                     x_input = x_input.reshape((1, n_steps, 1))
                     yhat = model.predict(x_input, verbose=0)
-                    st.write("For Day {}, the predicted output is {}".format(i,scaler.inverse_transform(yhat)))
+                    with st.spinner('Predicting'):
+                        time.sleep(1)
+                        st.success('Here we go!!')
+                        st.write("For Day {}, the predicted output is {}".format(i,scaler.inverse_transform(yhat)))
                     temp_input.extend(yhat[0].tolist())
                     temp_input=temp_input[1:]
                     lst_output.extend(yhat.tolist())
