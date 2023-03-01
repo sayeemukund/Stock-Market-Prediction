@@ -3,8 +3,6 @@ from streamlit_option_menu import option_menu
 import numpy
 
 st.write('hello')
-
-st.set_page_config(page_title="Stock Prediction", page_icon=":chart_with_upwards_trend:")
 selected=option_menu(
         menu_title='Stock Market Prediction',
         options= ['Introduction','Procedure'],
