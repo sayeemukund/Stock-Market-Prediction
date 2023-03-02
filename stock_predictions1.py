@@ -77,7 +77,6 @@ try:
         data.dropna(inplace=True)
         selected_stock = st.text_input('Enter your stock symbol:').upper()
         st.sidebar.title('Information:')
-        st.sidebar.info('Input is case sensitive. Stock symbols must be in capital letters.', icon="ℹ️")
         st.sidebar.info('Data retrieved from Yahoo finance from 1st january 2021 till today.', icon="ℹ️")
         st.sidebar.info('If you need predictions of an Indian stock, type your stock followed by ".NS". For eg, TCS.NS,ONGC.NS,RELIANCE.NS,IOC.NS,INFY.NS,etc.', icon="ℹ️")
         st.sidebar.info('If you need prredictions of a Foreign stock,  type your stock according to Yahoo Finance. For eg, AAPL,TSLA,AMZN,GOOGL,etc.',icon="ℹ️")
@@ -90,7 +89,7 @@ try:
                 stock_name=data.loc[data['Symbol'].str.upper() == selected_stock, 'Name'].values[0]
                 st.success(f'The name of the stock with symbol {selected_stock} is {stock_name}.')
         else:
-                st.info('Ente a Valid Stock')
+                st.info('Ente a Valid Stock',icon="ℹ️")
         tab2, tab3,tab4,tab5= st.tabs(["Data-set", "Data Visualization", "Predictions","Graphical Prediction"])
         with tab2:
                 data_load_state = st.text('Loading data...')
@@ -253,8 +252,6 @@ try:
                     dict(count=1, label="YTD", step="year", stepmode="todate"),
                     dict(count=1, label="1y", step="year", stepmode="backward"),
                     dict(step="all")])))
-
-                st.title('Predicted')
                 st.plotly_chart(fig7, use_container_width=True,renderer='webgl')
 except:
     pass
