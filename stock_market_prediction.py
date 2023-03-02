@@ -90,7 +90,7 @@ try:
                 st.success(f'The name of the stock with symbol {selected_stock} is {stock_name}.')
         else:
                 st.info('Ente a Valid Stock',icon="ℹ️")
-        tab2, tab3,tab4,tab5= st.tabs(["Data-set", "Data Visualization", "Predictions","Graphical Prediction"])
+        tab2, tab3,tab4,tab5= st.tabs(["Data-set", "Data Visualization", "Predictions","Prediction Visualizer"])
         with tab2:
                 data_load_state = st.text('Loading data...')
                 st.write("You have entered", selected_stock)
@@ -244,7 +244,7 @@ try:
                 df3.extend(lst_output)
                 trace = go.Scatter(x=list(range(len(test_data), len(df3))), y=scaler.inverse_transform(df3[len(test_data):]).reshape(-1), mode='lines', name='Predicted')
                 data = [trace]
-                layout = go.Layout(title='Overall Prediction', xaxis=dict(title='Day'), yaxis=dict(title='Value'))
+                layout = go.Layout(title='Overall Predictions', xaxis=dict(title='Day'), yaxis=dict(title='Value'))
                 fig7 = go.Figure(data=data, layout=layout)
                 fig7.update_xaxes(rangeslider_visible=True,rangeselector=dict(buttons=list([
                     dict(count=1, label="1m", step="month", stepmode="backward"),
